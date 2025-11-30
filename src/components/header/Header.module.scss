@@ -1,0 +1,14 @@
+.header {
+  grid-column: 2/12;
+  height: 70px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+
+  text-transform: uppercase;
+
+  border: solid 2px red;
+}

@@ -1,24 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import './App.css';
+import styles from './App.module.scss';
+import Content from './components/content/Content';
 import Header from './components/header/Header';
 
 function App() {
-  const { t } = useTranslation();
 
   return (
-    <>
+    <main className={styles.main}>
       <Header />
-      <div className="card">
-        <p>
-
-          {t('hello')}
-        </p>
-        <p>
-          {t('about')}
-
-        </p>
-      </div>
-    </>
+      <Content />
+    </main>
   );
 }
 
