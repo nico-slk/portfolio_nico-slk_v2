@@ -17,6 +17,13 @@
   @extend %button-base;
   background-color: #FEF63E;
   color: #0A0A18;
+  border: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: transparent;
+    color: $secondary-font-color;
+  }
 }
 
 .link {
@@ -32,4 +39,11 @@
   color: $secondary-font-color;
   border: solid 1px #FEF63E;
   font-family: $primary-font;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #FEF63E;
+    color: black;
+  }
+
 }
