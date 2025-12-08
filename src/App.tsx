@@ -1,15 +1,15 @@
-import styles from './App.module.scss';
-import Content from './components/content/Content';
-import Header from './components/header/Header';
+import Main from './components/content/Main';
+import Header from './components/content/header/Header';
 
-function App() {
+const App = () => {
 
   return (
-    <main className={styles.main}>
+    <>
       <Header />
-      <Content />
-    </main>
+      <Main />
+      {/* <Footer /> */}
+    </>
   );
-}
+};
 
 export default App;

@@ -1,3 +1,5 @@
+@use "@/styles/_variables.scss" as *;
+
 %button-base {
   width: 200px;
   height: 44px;
@@ -22,4 +24,12 @@
   background-color: transparent;
   border: none;
   color: #FFFCDD;
+}
+
+.secondary {
+  @extend %button-base;
+  background-color: transparent;
+  color: $secondary-font-color;
+  border: solid 1px #FEF63E;
+  font-family: $primary-font;
 }

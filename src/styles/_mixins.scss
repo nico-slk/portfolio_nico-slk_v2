@@ -2,3 +2,21 @@
   display: flex;
   flex-direction: column;
 }
+
+@mixin web {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}

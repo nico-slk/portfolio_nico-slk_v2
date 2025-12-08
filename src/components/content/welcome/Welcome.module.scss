@@ -1,0 +1,92 @@
+@use "@/styles/_mixins.scss" as *;
+@use "@/styles/_variables.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 24px 0;
+}
+
+.welcome {
+  width: 50%;
+  height: auto;
+  display: flex;
+
+  // border: solid 2px white;
+
+  &_left {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+    padding-right: 24px;
+
+    &_texts {
+      margin-bottom: 64px;
+    }
+
+    h3 {
+      font-size: 32px;
+      font-family: $secondary-font;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 64px;
+      font-family: $secondary-font;
+      margin-bottom: 18px;
+    }
+  }
+
+  @include web() {
+    &_left {
+      font-size: 18px;
+
+      h3 {
+        font-size: 24px;
+      }
+
+      h1 {
+        font-size: 56px;
+      }
+    }
+
+  }
+
+  @include tablet() {
+    color: yellow;
+
+    &_left {
+      width: 100%;
+    }
+
+    &_right {
+      display: none;
+    }
+  }
+
+  @include mobile() {
+    &_left {
+      font-size: 16px;
+      padding-right: 0;
+      color: blue;
+
+      h3 {
+        font-size: 18px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+  }
+}
+
+.computer {
+  width: 100%;
+  object-fit: contain;
+  max-width: 530px;
+}
