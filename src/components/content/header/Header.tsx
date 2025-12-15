@@ -11,24 +11,29 @@ const Header = () => {
     <header className={styles.header} >
       <Button
         btnFn={() => { }}
+        className={styles.uppercase_text}
         type='link'
       > Proyectos </Button>
       <Button
         btnFn={() => { }}
+        className={styles.uppercase_text}
         type='link'
       > Experiencia </Button>
       <Button
         btnFn={() => { }}
+        className={styles.uppercase_text}
         type='button'
       > Contacto </Button>
-      <div>|</div>
+      <div className={styles.divider}></div>
       {idioma === 'es'
         ? <Button
           btnFn={() => i18n.changeLanguage("en")}
+          className={`${styles.uppercase_text} ${styles.languageBtn}`}
           type='link'
         > EN </Button>
         : <Button
           btnFn={() => i18n.changeLanguage("es")}
+          className={`${styles.uppercase_text} ${styles.languageBtn}`}
           type='link'
         > ES </Button>
       }

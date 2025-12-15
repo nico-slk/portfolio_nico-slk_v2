@@ -1,11 +1,27 @@
-.header {
-  height: 70px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 16px;
-  margin: 24px 0;
+ @use "@/styles/_variables.scss" as *;
 
-  text-transform: uppercase;
-}
+ .header {
+   height: 70px;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 32px;
+   margin: 24px 0;
+ }
+
+ .uppercase_text {
+   text-transform: uppercase;
+ }
+
+ .languageBtn {
+   width: 44px;
+ }
+
+ .divider {
+   border: solid 2px $primary-font-color;
+   box-shadow: 0 0 24px 4px rgba(255, 255, 255, 0.7);
+   height: 44px;
+   border-radius: 4px;
+   background-color: $primary-font-color;
+ }

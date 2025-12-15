@@ -13,8 +13,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      // Define el alias '@' para que apunte a la raíz de tu proyecto ('/src')
+      // ➡️ Configuración del alias
       '@': path.resolve(__dirname, './src'),
-    }
-  }
+    },
+  },
 });

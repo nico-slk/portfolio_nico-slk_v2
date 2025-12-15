@@ -15,14 +15,21 @@
 
 .button {
   @extend %button-base;
-  background-color: #FEF63E;
+  background-color: $secondary-font-color;
   color: #0A0A18;
-  border: none;
-  transition: all 0.3s ease;
+  border: solid 1px $secondary-font-color;
+  transition: all 0.3s;
 
-  &:hover {
+  &:active {
     background-color: transparent;
     color: $secondary-font-color;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: transparent;
+      color: $secondary-font-color;
+    }
   }
 }
 
@@ -30,20 +37,39 @@
   @extend %button-base;
   background-color: transparent;
   border: none;
-  color: #FFFCDD;
+  color: $primary-font-color;
+  transition: all 0.3s;
+  border: solid 1px rgba(255, 255, 255, 0);
+
+  &:active {
+    border: solid 3px rgba(255, 255, 255, 0.1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 0 0 36px 5px rgba(255, 255, 255, 0.2);
+    }
+  }
 }
 
 .secondary {
   @extend %button-base;
   background-color: transparent;
   color: $secondary-font-color;
-  border: solid 1px #FEF63E;
+  border: solid 1px $secondary-font-color;
   font-family: $primary-font;
   transition: all 0.3s ease;
 
-  &:hover {
-    background-color: #FEF63E;
+  &:active {
+    background-color: $secondary-font-color;
     color: black;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $secondary-font-color;
+      color: black;
+    }
   }
 
 }

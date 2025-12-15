@@ -8,14 +8,21 @@ const WelcomeContentLeft = () => {
   return (
     <div className={`${styles.welcome} ${styles.welcome_left}`}>
       <div className={styles.welcome_left_texts}>
-        <h3>{t('hi')} Nicolás Selicki</h3>
+        <h3>{t('hi') + ' '}
+          <span className={styles.custom_underline}>
+            {'Nicolás Selicki'}
+          </span>
+        </h3>
         <h1>FULL STACK DEVELOPER</h1>
         <p>{t('introduction')}</p>
       </div>
       <Button
         btnFn={() => { }}
         type='secondary'
-      >Descargar CV</Button>
+        className={styles.resumeBtn}
+      >
+        Descargar CV
+      </Button>
     </div>
   );
 };
