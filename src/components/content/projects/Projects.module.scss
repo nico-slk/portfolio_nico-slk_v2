@@ -2,5 +2,15 @@
 @use "@/styles/_variables.scss" as *;
 
 .container {
-  border: solid 2px blue;
+  // border: solid 2px blue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  @include web() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile() {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

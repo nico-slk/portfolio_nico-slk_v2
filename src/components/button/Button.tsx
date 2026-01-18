@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react';
-import styles from './Button.module.scss';
+import type { ReactNode } from "react";
+import styles from "./Button.module.scss";
 
-type ButtonType = 'button' | 'link' | 'secondary';
+type ButtonType = "button" | "link" | "secondary" | "negativeLink";
 
 interface ButtonProps {
   btnFn: () => void;
@@ -12,10 +12,9 @@ interface ButtonProps {
 
 const Button = ({ btnFn, children, type, className }: ButtonProps) => {
   return (
-    <button
-      onClick={btnFn}
-      className={`${styles[type]} ${className}`}
-    >{children}</button>
+    <button onClick={btnFn} className={`${styles[type]} ${className}`}>
+      {children}
+    </button>
   );
 };
 

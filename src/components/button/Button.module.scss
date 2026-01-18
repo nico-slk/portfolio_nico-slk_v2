@@ -16,7 +16,7 @@
 .button {
   @extend %button-base;
   background-color: $secondary-font-color;
-  color: #0A0A18;
+  color: #0a0a18;
   border: solid 1px $secondary-font-color;
   transition: all 0.3s;
 
@@ -52,6 +52,23 @@
   }
 }
 
+.negativeLink {
+  @extend %button-base;
+  border: none;
+  background-color: $secondary-font-color;
+  transition: all 0.3s;
+
+  &:active {
+    border: solid 1px black;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-font-color;
+    }
+  }
+}
+
 .secondary {
   @extend %button-base;
   background-color: transparent;
@@ -71,5 +88,4 @@
       color: black;
     }
   }
-
 }

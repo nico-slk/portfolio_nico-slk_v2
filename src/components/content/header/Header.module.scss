@@ -1,27 +1,33 @@
- @use "@/styles/_variables.scss" as *;
+@use "@/styles/_variables.scss" as *;
 
- .header {
-   height: 70px;
-   display: flex;
-   flex-direction: row;
-   justify-content: flex-end;
-   align-items: center;
-   gap: 32px;
-   margin: 24px 0;
- }
+.header {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
+  margin: 24px 0;
+}
 
- .uppercase_text {
-   text-transform: uppercase;
- }
+.uppercase_text {
+  text-transform: uppercase;
+  &:hover {
+    border: solid 1px $primary-font-color;
+  }
+}
 
- .languageBtn {
-   width: 44px;
- }
+.languageBtn {
+  width: 44px;
+  &:hover {
+    border: solid 1px $primary-font-color;
+  }
+}
 
- .divider {
-   border: solid 2px $primary-font-color;
-   box-shadow: 0 0 24px 4px rgba(255, 255, 255, 0.7);
-   height: 44px;
-   border-radius: 4px;
-   background-color: $primary-font-color;
- }
+.divider {
+  border: solid 2px $primary-font-color;
+  box-shadow: 0 0 24px 4px rgba(255, 255, 255, 0.7);
+  height: 44px;
+  border-radius: 4px;
+  background-color: $primary-font-color;
+}
