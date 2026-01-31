@@ -1,0 +1,53 @@
+@use "@/styles/_variables.scss" as *;
+@use "@/styles/_mixins.scss" as *;
+
+.footer_container {
+  background-color: $secondary-font-color;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  color: #000;
+  margin-top: auto;
+}
+
+.footer {
+  grid-column: 2 / 12;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mobile() {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+.left {
+  p {
+    font-size: 14px;
+    margin: 0;
+
+    strong {
+      font-family: $secondary-font;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  gap: 24px;
+
+  a {
+    color: #000;
+    font-size: 22px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}

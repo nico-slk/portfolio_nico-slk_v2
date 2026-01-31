@@ -1,10 +1,10 @@
 import { useState, type Dispatch, type SetStateAction } from "react";
-import Button from "../button/Button";
 import IconsList from "../iconsList/IconsList";
 import Modal from "../modal/Modal";
 import styles from "./Card.module.scss";
 
 import { FaGlobe } from "react-icons/fa";
+import { Button } from '../button/Button';
 
 const {
   container,

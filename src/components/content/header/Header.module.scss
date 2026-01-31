@@ -1,6 +1,12 @@
 @use "@/styles/_variables.scss" as *;
 
+.header_container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
 .header {
+  grid-column: 2 / 12;
   height: 70px;
   display: flex;
   flex-direction: row;

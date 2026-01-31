@@ -1,7 +1,6 @@
 @use "./variables.scss" as *;
 @use "./mixins.scss" as *;
 
-
 :root {
   font-family: $primary-font;
 
@@ -18,20 +17,11 @@
 }
 
 body {
-  // @include flexItemsCenter();
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-
   min-width: 320px;
   min-height: 100vh;
-
-  border: solid 2px red;
 }
 
 #root {
-  // max-width: 1280px;
-  // margin: 0 auto;
+  min-height: 100vh;
   text-align: center;
-  grid-column: 2 / 12;
 }

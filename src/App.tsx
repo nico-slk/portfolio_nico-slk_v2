@@ -1,4 +1,5 @@
 import Main from "./components/content/Main";
+import Footer from './components/content/footer/Footer';
 import Header from "./components/content/header/Header";
 
 const App = () => {
@@ -6,7 +7,7 @@ const App = () => {
     <>
       <Header />
       <Main />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

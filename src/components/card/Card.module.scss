@@ -10,11 +10,18 @@
   padding: 1rem;
 
   text-align: left;
+
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .card_title {
   font-family: $secondary-font;
   font-size: 32px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 
   @include web() {
     font-size: 24px;
@@ -23,6 +30,7 @@
 
 .card_text {
   margin-bottom: 1rem;
+  word-wrap: break-word;
 }
 
 .underline {

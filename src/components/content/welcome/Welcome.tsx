@@ -1,7 +1,7 @@
+import { Button } from '@/components/button/Button';
 import { useTranslation } from 'react-i18next';
-import styles from './Welcome.module.scss';
 import computer from '../../../assets/computer.svg';
-import Button from '../../button/Button';
+import styles from './Welcome.module.scss';
 
 const WelcomeContentLeft = () => {
   const { t } = useTranslation();
@@ -21,7 +21,7 @@ const WelcomeContentLeft = () => {
         type='secondary'
         className={styles.resumeBtn}
       >
-        Descargar CV
+        {t('download_resume')}
       </Button>
     </div>
   );
