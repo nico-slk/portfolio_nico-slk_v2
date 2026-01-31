@@ -3,6 +3,7 @@ import IconsList from "../iconsList/IconsList";
 import Modal from "../modal/Modal";
 import styles from "./Card.module.scss";
 
+import { useTranslation } from 'react-i18next';
 import { FaGlobe } from "react-icons/fa";
 import { Button } from '../button/Button';
 
@@ -42,12 +43,12 @@ interface ModalProps {
 }
 
 const ModalComponent = ({ isOpen, setIsOpen, link, repo }: ModalProps) => {
+  const { t } = useTranslation();
   return (
     <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-      <h2>Detalle del proyecto</h2>
+      <h2>{t("project_details")}</h2>
       <p>
-        Información extendida del proyecto, tecnologías usadas, links,
-        screenshots, etc.
+        {t('modal_description')}
       </p>
       {link && (
         <Button btnFn={() => { }} type="button" className={webBtn}>
@@ -58,7 +59,7 @@ const ModalComponent = ({ isOpen, setIsOpen, link, repo }: ModalProps) => {
       )}
       <Button btnFn={() => { }} type="secondary" className={webBtn}>
         <a href={repo} onClick={(e) => e.preventDefault()}>
-          Boton que dirige al repositorio
+          {t('repository_button')}
         </a>
       </Button>
     </Modal>

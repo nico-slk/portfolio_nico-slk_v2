@@ -1,21 +1,9 @@
-import Title from '@/components/common/Title';
+import { useTranslation } from 'react-i18next';
 import styles from './Experience.module.scss';
 
-const LeftContent = () => (
-  <div className={styles.left}>
-    <div className={styles.jobCard}>
-      <h3>JUNIOR FRONT-END ENGINEER | GLOBAL LOGIC</h3>
-      <span className={styles.date}>JUN 2021 - NOV 2022</span>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-        libero et velit interdum, ac aliquet odio mattis. Class aptent taciti
-        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-      </p>
-    </div>
-  </div>
-);
+const Jobs = () => {
+  const { t } = useTranslation();
 
-const RightContent = () => {
   const education = [
     { year: '2022', title: 'DESARROLLO FULLSTACK CON REACT+JAVA', place: 'JALASOFT UNIVERSITY' },
     { year: '2021', title: 'DESARROLLO FULLSTACK CON JAVA', place: 'PROGRAMA DIGITALERS - TELECOM + EDUCACIÓN IT' },
@@ -24,7 +12,7 @@ const RightContent = () => {
 
   return (
     <div className={styles.right}>
-      <h2 className={styles.title_center}>FORMACIÓN</h2>
+      <h2 className={styles.title_center}>{t('education_title')}</h2>
       <div className={styles.timeline}>
         {education.map((item, index) => (
           <div key={index} className={styles.timeline_item}>
@@ -40,19 +28,4 @@ const RightContent = () => {
   );
 };
 
-const ExperienceAndEducation = () => {
-  return (
-    <section className={styles.main_container}>
-
-      <Title text="EXPERIENCIA" />
-      <div className={styles.content_container}>
-
-        <LeftContent />
-        <div className={styles.divider}></div>
-        <RightContent />
-      </div>
-    </section>
-  );
-};
-
-export default ExperienceAndEducation;
+export default Jobs;

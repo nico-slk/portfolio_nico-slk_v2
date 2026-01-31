@@ -17,22 +17,22 @@ const IconsList = ({ techList }: { techList: TechsTypes[]; }) => {
       {techList.map((icon) => {
         switch (icon) {
           case "javascript":
-            return <SiJavascript className={iconStyle} />;
+            return <SiJavascript className={iconStyle} key={icon} />;
           case "node":
-            return <FaNodeJs className={iconStyle} />;
+            return <FaNodeJs className={iconStyle} key={icon} />;
           case "react":
-            return <SiReact className={iconStyle} />;
+            return <SiReact className={iconStyle} key={icon} />;
           case "redux":
-            return <SiRedux className={iconStyle} />;
+            return <SiRedux className={iconStyle} key={icon} />;
           case "express":
-            return <SiExpress className={iconStyle} />;
+            return <SiExpress className={iconStyle} key={icon} />;
           case "java":
-            return <FaJava className={iconStyle} />;
+            return <FaJava className={iconStyle} key={icon} />;
           case "springboot":
-            return <SiSpring className={iconStyle} />;
+            return <SiSpring className={iconStyle} key={icon} />;
 
           default:
-            return <SiSpring className={iconStyle} />;
+            return <SiSpring className={iconStyle} key={icon} />;
         }
       })}
     </div>

@@ -1,6 +1,6 @@
 import Contact from './contact/Contact';
 import styles from './Content.module.scss';
-import Experience from './experience/Experience';
+import ExperienceAndEducation from './experience/ExperienceAndEducation';
 import Projects from "./projects/Projects";
 import Techs from './techs/Techs';
 import Welcome from "./welcome/Welcome";
@@ -12,7 +12,7 @@ const Content = () => {
       <Welcome />
       <Projects />
       <Techs />
-      <Experience />
+      <ExperienceAndEducation />
       <Contact />
     </main>
   );

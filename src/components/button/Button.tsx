@@ -1,4 +1,5 @@
 import { useRef, type ChangeEvent, type ReactNode } from "react";
+import { useTranslation } from 'react-i18next';
 import { FaUpload } from 'react-icons/fa';
 import styles from "./Button.module.scss";
 
@@ -21,6 +22,7 @@ const Button = ({ btnFn, children, type, className }: ButtonProps) => {
 
 const FileButton = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { t } = useTranslation();
 
   const handleButtonClick = () => {
     fileInputRef.current?.click();
@@ -49,10 +51,10 @@ const FileButton = () => {
         type="secondary"
         className={styles.uploadBtn}
       >
-        <FaUpload /> <p>Subir Archivo</p>
+        <FaUpload /> <p>{t("upload_file")}</p>
       </Button>
 
-      <p className={styles.hint}>Formatos admitidos: PDF, PNG, JPG</p>
+      <p className={styles.hint}>{t("upload_file_hint")}</p>
     </div>
   );
 };

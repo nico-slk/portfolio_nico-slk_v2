@@ -1,0 +1,72 @@
+@use "@/styles/_variables.scss" as *;
+
+.container {
+  position: absolute; // Se posiciona respecto al body (o el primer padre relative)
+  top: 0;
+  left: 0;
+  width: 100%; // Ocupa todo el ancho disponible
+  height: 100%; // Ocupa todo el alto del documento (ideal para scroll largo)
+  z-index: -1; // Se sitúa por detrás de todo el contenido del porfolio
+  overflow: hidden; // Corta cualquier parte de los blobs que salga de los bordes
+  pointer-events: none; // Permite hacer click en elementos debajo (botones, links)
+}
+
+.blob {
+  position: absolute; // Permite posicionar cada blob de forma independiente
+  border-radius: 50%; // Hace que el div sea un círculo
+  // Crea el efecto de luz difusa: más opaco en el centro, transparente fuera
+  background: radial-gradient(
+    circle,
+    rgba($secondary-font-color, 0.2) 0%,
+    rgba($primary-font-color, 0.15) 70%
+  );
+  // Desenfoque masivo para que el círculo parezca una nube de gas
+  filter: blur(90px);
+  // Suaviza el cambio de posición enviado por React (8 segundos de duración)
+  transition: transform 5s ease-in-out;
+  // Optimización de rendimiento: indica al navegador que prepare la GPU
+  will-change: transform;
+}
+
+// Configuración de tamaños y posiciones iniciales usando unidades relativas (vw)
+.topLeft {
+  width: 50vw;
+  height: 50vw;
+  top: -10%; // Ubicado cerca del encabezado
+  left: -10%; // Sale un poco del borde para un look más natural
+}
+
+.topRight {
+  width: 40vw;
+  height: 40vw;
+  top: 10%; // Ubicado al inicio de la página
+  right: 10%; // Sale un poco del borde para un look más natural
+}
+
+.middleRight {
+  width: 50vw;
+  height: 50vw;
+  top: 50%; // Ubicado cerca de la sección de Proyectos/Experiencia
+  right: -10%;
+}
+
+.middleLeft {
+  width: 35vw;
+  height: 35vw;
+  top: 30%; // Ubicado cerca de la sección de Habilidades/Tecnologías
+  left: -10%;
+}
+
+.middleBottomLeft {
+  width: 30vw;
+  height: 30vw;
+  top: 65%; // Ubicado cerca de la sección de Habilidades/Tecnologías
+  left: -5%;
+}
+
+.bottomLeft {
+  width: 45vw;
+  height: 45vw;
+  top: 80%; // Ubicado cerca del área de contacto/footer
+  right: -10%;
+}

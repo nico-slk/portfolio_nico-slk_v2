@@ -1,14 +1,16 @@
+import { useTranslation } from 'react-i18next';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className={styles.footer_container}>
       <div className={styles.footer}>
         <div className={styles.left}>
-          <p>© {currentYear} <strong>Nicolás Selicki</strong>. Casi todos los derechos reservados.</p>
+          <p>© {currentYear} <strong>Nicolás Selicki</strong>. {t('all_rights_reserved')}</p>
         </div>
 
         <div className={styles.right}>
