@@ -95,7 +95,7 @@
     }
   }
 
-  @include mobile() {
+  @include tablet-small() {
     &_left {
       font-size: 16px;
       padding-right: 0;

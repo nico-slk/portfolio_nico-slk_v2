@@ -1,0 +1,14 @@
+@use "@/styles/_variables.scss" as *;
+@use "@/styles/_mixins.scss" as *;
+
+.left {
+  text-align: left;
+  // grid-column: 1 / 9;
+}
+
+.title_center {
+  text-align: start;
+  margin-bottom: 40px;
+  color: $primary-font-color;
+  font-family: $secondary-font;
+}

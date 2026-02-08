@@ -3,6 +3,12 @@
   flex-direction: column;
 }
 
+@mixin web-l {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
 @mixin web {
   @media screen and (max-width: 1200px) {
     @content;
@@ -16,13 +22,13 @@
 }
 
 @mixin tablet-small {
-  @media screen and (max-width: 730px) {
+  @media screen and (max-width: 768px) {
     @content;
   }
 }
 
 @mixin mobile {
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 425px) {
     @content;
   }
 }

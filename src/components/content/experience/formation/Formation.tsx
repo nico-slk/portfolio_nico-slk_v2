@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import styles from './Experience.module.scss';
+import styles from './Formation.module.scss';
+import FormationCard from './card/FormationCard';
 
-const Jobs = () => {
+const Formation = () => {
   const { t } = useTranslation();
 
   const education = [
@@ -14,18 +15,12 @@ const Jobs = () => {
     <div className={styles.right}>
       <h2 className={styles.title_center}>{t('education_title')}</h2>
       <div className={styles.timeline}>
-        {education.map((item, index) => (
-          <div key={index} className={styles.timeline_item}>
-            <span className={styles.timeline_year}>{item.year}</span>
-            <div className={styles.timeline_content}>
-              <h4>{item.title}</h4>
-              <p>| {item.place}</p>
-            </div>
-          </div>
+        {education.map((course, index) => (
+          <FormationCard key={index} course={course} />
         ))}
       </div>
     </div>
   );
 };
 
-export default Jobs;
+export default Formation;

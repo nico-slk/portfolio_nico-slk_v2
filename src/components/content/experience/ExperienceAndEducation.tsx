@@ -1,8 +1,8 @@
 import Title from '@/components/common/Title';
 import { useTranslation } from 'react-i18next';
-import Experience from './Experience';
-import styles from './Experience.module.scss';
-import Formation from './Formation';
+import styles from './ExperienceAndEducation.module.scss';
+import Experience from './experience/Experience';
+import Formation from './formation/Formation';
 
 const ExperienceAndEducation = () => {
   const { t } = useTranslation();
@@ -10,9 +10,9 @@ const ExperienceAndEducation = () => {
     <section className={styles.main_container}>
       <Title text={t('experience_and_formation')} />
       <div className={styles.content_container}>
-        <Formation />
-        <div className={styles.divider}></div>
         <Experience />
+        <div className={styles.divider}></div>
+        <Formation />
       </div>
     </section>
   );
