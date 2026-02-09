@@ -3,6 +3,8 @@
 
 .timeline {
   &_item {
+    display: grid;
+    grid-template-columns: auto 10%;
     position: relative;
     margin-bottom: 30px;
     padding-left: 30px;
@@ -42,4 +44,19 @@
       font-family: $secondary-font;
     }
   }
+}
+
+.webBtn {
+  width: 40px;
+  height: 40px;
+  a {
+    display: grid;
+    place-items: center;
+  }
+}
+
+.webBtnIcon {
+  width: 18px;
+  height: 18px;
+  color: black;
 }

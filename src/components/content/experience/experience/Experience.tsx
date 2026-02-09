@@ -1,11 +1,16 @@
-import { useFirestore } from '@/hooks/useFirestore';
+import { useFirebase } from '@/hooks/useFirebase';
+import type { Experience } from '@/interfaces/experience';
 import { useTranslation } from 'react-i18next';
 import styles from './Experience.module.scss';
 import ExperienceCard from './card/ExperienceCard';
 
 const Experience = () => {
   const { t } = useTranslation();
-  const { data } = useFirestore('experiences');
+  const { data, loading } = useFirebase('experiences', 'start_date') as { data: Experience[]; loading: boolean; };
+
+  if (loading) {
+    return <div className={styles.loading}>{t('loading_experience')}</div>;
+  }
 
   return (
     <div className={styles.left}>
@@ -14,7 +19,6 @@ const Experience = () => {
         {data && data.map((item, index) => (
           <ExperienceCard key={index} experience={item} />
         ))}
-
       </div>
     </div>
   );

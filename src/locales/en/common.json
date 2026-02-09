@@ -23,5 +23,8 @@
   "message_placeholder": "Write your message...",
   "send_message": "SEND MESSAGE",
   "techs": "Technologies & Tools",
-  "projects": "Projects"
+  "projects": "Projects",
+  "loading_experience": "Loading experience...",
+  "loading_formation": "Loading education...",
+  "loading_projects": "Loading projects..."
 }

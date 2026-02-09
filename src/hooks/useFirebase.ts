@@ -1,11 +1,13 @@
 import { db } from "@/db/firebase";
 import type { Experience } from "@/interfaces/experience";
+import type { Formation } from "@/interfaces/formation";
+import type { Projects } from "@/interfaces/project";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export const useFirestore = (collectionName: string) => {
-  const [data, setData] = useState<Experience[]>([]);
+export const useFirebase = (collectionName: string, orderByField?: string) => {
+  const [data, setData] = useState<Projects[] | Experience[] | Formation[]>([]);
   const [loading, setLoading] = useState(true);
   const { i18n } = useTranslation();
 
@@ -13,10 +15,10 @@ export const useFirestore = (collectionName: string) => {
     const getData = async () => {
       setLoading(true);
       try {
-        const q = query(
-          collection(db, collectionName),
-          orderBy("start_date", "desc"),
-        );
+        const colRef = collection(db, collectionName);
+        const q = orderByField
+          ? query(colRef, orderBy(orderByField, "desc"))
+          : colRef;
         const querySnapshot = await getDocs(q);
 
         const documents = querySnapshot.docs.map((doc) => {
@@ -24,13 +26,11 @@ export const useFirestore = (collectionName: string) => {
           const lang = i18n.language.split("-")[0];
 
           return {
-            id: doc.id,
-            company: item.company,
-            start_date: item.start_date?.toDate(),
-            end_date: item.end_date?.toDate(),
+            ...item,
             ...item.translations[lang],
           };
         });
+
         setData(documents);
       } catch (e) {
         console.error(e);
@@ -39,7 +39,7 @@ export const useFirestore = (collectionName: string) => {
       }
     };
     getData();
-  }, [collectionName, i18n.language]);
+  }, [collectionName, i18n.language, orderByField]);
 
   return { data, loading };
 };

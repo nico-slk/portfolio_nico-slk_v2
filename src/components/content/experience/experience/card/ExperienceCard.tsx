@@ -4,6 +4,9 @@ import styles from './ExperienceCard.module.scss';
 const ExperienceCard = ({ experience }: { experience: Experience; }) => {
   const { end_date, start_date, description } = experience;
 
+  const endDate = new Date(end_date.seconds * 1000);
+  const startDate = new Date(start_date.seconds * 1000);
+
   return (
     <div className={styles.jobCard}>
       <span className={styles.jobCard_content}>
@@ -12,7 +15,7 @@ const ExperienceCard = ({ experience }: { experience: Experience; }) => {
         <p className={styles.position}>{experience.position}</p>
       </span>
       <span className={styles.date}>
-        {`${start_date.getMonth() + 1}/${start_date.getFullYear()}`} - {end_date.getMonth() + 1}/{end_date.getFullYear()}
+        {`${startDate.getMonth() + 1}/${startDate.getFullYear()}`} - {endDate.getMonth() + 1}/{endDate.getFullYear()}
       </span>
       <p>
         {description}

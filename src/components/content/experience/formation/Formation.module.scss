@@ -2,10 +2,10 @@
 @use "@/styles/_mixins.scss" as *;
 
 .right {
-  // grid-column: 10 / 17;
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-column: 10 / 17;
+  // display: grid;
+  // grid-template-columns: repeat(9, 1fr);
+  // grid-template-rows: repeat(2, auto);
 }
 
 .title_center {
@@ -13,14 +13,14 @@
   margin-bottom: 40px;
   color: $primary-font-color;
   font-family: $secondary-font;
-  grid-row: 1 / 2;
-  grid-column: 1 / 9;
+  // grid-row: 1 / 2;
+  // grid-column: 1 / 9;
 }
 
 .timeline {
   // position: relative;
-  grid-row: 2 / 3;
-  grid-column: 1 / 9;
+  // grid-row: 2 / 3;
+  // grid-column: 1 / 9;
   margin-top: 40px;
   border-left: 2px solid $primary-font-color;
   margin-left: 60px;

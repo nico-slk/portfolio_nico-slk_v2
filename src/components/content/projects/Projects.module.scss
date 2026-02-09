@@ -32,3 +32,11 @@
     }
   }
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: $secondary-font;
+}

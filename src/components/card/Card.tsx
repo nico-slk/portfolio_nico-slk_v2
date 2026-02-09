@@ -3,6 +3,7 @@ import IconsList from "../iconsList/IconsList";
 import Modal from "../modal/Modal";
 import styles from "./Card.module.scss";
 
+import type { Projects } from '@/interfaces/project';
 import { useTranslation } from 'react-i18next';
 import { FaGlobe } from "react-icons/fa";
 import { Button } from '../button/Button';
@@ -17,24 +18,6 @@ const {
   webBtnIcon,
 } = styles;
 
-export type TechsTypes =
-  | "javascript"
-  | "node"
-  | "react"
-  | "redux"
-  | "express"
-  | "java"
-  | "springboot";
-
-export interface IProjects {
-  id: string;
-  name: string;
-  text: string;
-  repo: string;
-  link?: string;
-  techs: TechsTypes[];
-}
-
 interface ModalProps {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -42,7 +25,7 @@ interface ModalProps {
   repo: string;
 }
 
-const ModalComponent = ({ isOpen, setIsOpen, link, repo }: ModalProps) => {
+const ModalContent = ({ isOpen, setIsOpen, link, repo }: ModalProps) => {
   const { t } = useTranslation();
   return (
     <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
@@ -51,29 +34,25 @@ const ModalComponent = ({ isOpen, setIsOpen, link, repo }: ModalProps) => {
         {t('modal_description')}
       </p>
       {link && (
-        <Button btnFn={() => { }} type="button" className={webBtn}>
-          <a href={link} onClick={(e) => e.preventDefault()}>
-            <FaGlobe className={webBtnIcon} />
-          </a>
+        <Button btnFn={() => window.open(link, '_blank', 'noopener,noreferrer')} type="button" className={webBtn}>
+          <FaGlobe className={webBtnIcon} />
         </Button>
       )}
-      <Button btnFn={() => { }} type="secondary" className={webBtn}>
-        <a href={repo} onClick={(e) => e.preventDefault()}>
-          {t('repository_button')}
-        </a>
+      <Button btnFn={() => window.open(repo, '_blank', 'noopener,noreferrer')} type="secondary" className={webBtn}>
+        {t('repository_button')}
       </Button>
     </Modal>
   );
 };
 
-const Card = ({ name, text, repo, link, techs, id }: IProjects) => {
+const Card = ({ name, description, repo, link, techs, id }: Projects) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={container} key={id}>
       <p className={card_title}>{name}</p>
       <div className={underline}></div>
-      <p className={card_text}>{text}</p>
+      <p className={card_text}>{description}</p>
 
       <IconsList techList={techs} />
 
@@ -82,14 +61,12 @@ const Card = ({ name, text, repo, link, techs, id }: IProjects) => {
           Ver más
         </Button>
         {link && (
-          <Button btnFn={() => { }} type="negativeLink" className={webBtn}>
-            <a href={link} onClick={(e) => e.preventDefault()}>
-              <FaGlobe className={webBtnIcon} />
-            </a>
+          <Button btnFn={() => window.open(link, '_blank', 'noopener,noreferrer')} type="negativeLink" className={webBtn}>
+            <FaGlobe className={webBtnIcon} />
           </Button>
         )}
       </div>
-      <ModalComponent
+      <ModalContent
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         link={link}

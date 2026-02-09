@@ -1,21 +1,28 @@
 import Title from '@/components/common/Title';
-import { projects } from "@/data";
+import { useFirebase } from '@/hooks/useFirebase';
+import type { Projects as IProjects, TechsTypes } from '@/interfaces/project';
 import { useTranslation } from 'react-i18next';
-import Card, { type TechsTypes } from "../../card/Card";
+import Card from "../../card/Card";
 import styles from "./Projects.module.scss";
 
 const Projects = () => {
   const { t } = useTranslation();
+  const { data: projects, loading } = useFirebase("projects") as { data: IProjects[]; loading: boolean; };
+
+  if (loading) {
+    return <div className={styles.loading}>{t('loading_projects')}</div>;
+  }
+
   return (
     <div className={styles.container}>
       <Title text={t('projects')} />
       <div className={styles.list}>
-        {projects.map((project) => (
+        {projects.map((project: IProjects) => (
           <Card
-            key={project.id}
+            key={project.name}
             id={project.id}
             name={project.name}
-            text={project.text}
+            description={project.description}
             repo={project.repo}
             link={project.link}
             techs={project.techs as TechsTypes[]}
