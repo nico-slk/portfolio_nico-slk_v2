@@ -2,24 +2,21 @@
 @use "@/styles/_mixins.scss" as *;
 
 .left {
-  // Eliminamos max-width y margin auto
   width: 100%;
-  padding: clamp(1rem, 3vw, 2rem) 0; // Padding vertical solamente
-  text-align: left;
+  padding: clamp(2rem, 5vw, 4rem) 0;
 }
 
 .title_center {
   font-family: $secondary-font;
   color: $secondary-font-color;
-  font-size: clamp(28px, 5vw, 40px);
-  text-transform: uppercase;
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 3rem;
-  border-left: 5px solid $secondary-font-color;
-  padding-left: 20px;
+  text-align: left;
+  border-top: 1px solid rgba($primary-font-color, 0.05);
+  padding-top: 2rem;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: clamp(2.5rem, 5vw, 4rem);
 }

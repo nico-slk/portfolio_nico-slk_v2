@@ -3,17 +3,18 @@ import type { Formation } from '@/interfaces/formation';
 import { FaGlobe } from 'react-icons/fa';
 import styles from './FormationCard.module.scss';
 
+// ... imports
 const FormationCard = ({ course }: { course: Formation; }) => {
   const { diploma_url, institution, name, start_date } = course;
-  // Manejo de fecha compatible con Firebase Timestamp
   const date = start_date?.seconds ? new Date(start_date.seconds * 1000) : new Date();
   const year = date.getFullYear();
 
   return (
     <div className={styles.timeline_item}>
+      {/* El punto interactivo */}
       <div className={styles.dot}></div>
 
-      <div className={styles.header}>
+      <div className={styles.content_wrapper}>
         <span className={styles.year}>{year}</span>
         <div className={styles.title_group}>
           <h3 className={styles.formation_title}>{name}</h3>

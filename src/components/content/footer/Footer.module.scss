@@ -1,40 +1,50 @@
 @use "@/styles/_variables.scss" as *;
 @use "@/styles/_mixins.scss" as *;
 
-.footer_container {
-  background-color: $secondary-font-color;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+.footer_wrapper {
+  background-color: $secondary-font-color; // El fondo amarillo ocupa el 100%
+  width: 100%;
   color: #000;
   margin-top: auto;
 }
 
-.footer {
+.footer_grid {
+  // COPIA EXACTA DE TU .CONTAINER
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+
+  // Padding igual al del Main para que la alineación sea perfecta
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.content {
+  // ALINEACIÓN CON LOS HIJOS DEL MAIN (COL 2 A 12)
   grid-column: 2 / 12;
-  height: clamp(50px, 10vh, 70px);
+
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: clamp(12px, 4vw, 24px);
-  padding: clamp(1rem, 3vw, 1.5rem) 0;
+  height: clamp(60px, 10vh, 90px);
 
   @include tablet() {
     grid-column: 1 / 13;
-    padding: clamp(0.75rem, 3vw, 1.25rem);
   }
 
   @include mobile() {
     flex-direction: column;
-    gap: clamp(10px, 3vw, 16px);
-    text-align: center;
+    justify-content: center;
+    gap: 1.5rem;
     height: auto;
+    padding: 2rem 0;
   }
 }
 
 .left {
   p {
-    font-size: clamp(12px, 2vw, 14px);
+    font-size: clamp(13px, 1.5vw, 15px);
     margin: 0;
 
     strong {
@@ -46,23 +56,17 @@
 
 .right {
   display: flex;
-  gap: clamp(12px, 3vw, 24px);
+  gap: 1.5rem;
 
   a {
     color: #000;
-    font-size: clamp(16px, 3vw, 22px);
+    font-size: 1.4rem;
     transition: transform 0.2s ease;
     display: flex;
-    align-items: center;
-    justify-content: center;
 
     &:hover {
       transform: translateY(-3px);
-      color: rgba(0, 0, 0, 0.7);
-    }
-
-    @media screen and (max-width: 425px) {
-      font-size: 18px;
+      opacity: 0.7;
     }
   }
 }

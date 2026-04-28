@@ -6,7 +6,7 @@ import Header from "./components/content/header/Header";
 const App = () => {
   return (
     <>
-      <div id="root-container"> {/* Aquí iría tu lógica de grid si la mantienes */}
+      <div id="root-container">
 
         <BackgroundBlobs />
         <Header />

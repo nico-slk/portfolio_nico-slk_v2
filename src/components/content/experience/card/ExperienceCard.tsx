@@ -11,15 +11,13 @@ const ExperienceCard = ({ experience }: { experience: Experience; }) => {
 
   return (
     <article className={styles.jobCard}>
-      <header className={styles.jobHeader}>
-        <div className={styles.info}>
-          <h3 className={styles.company}>{company}</h3>
-          <p className={styles.position}>{position}</p>
-        </div>
+      <div className={styles.left_col}>
+        <h3 className={styles.company}>{company}</h3>
+        <p className={styles.position}>{position}</p>
         <time className={styles.date}>{dateString}</time>
-      </header>
+      </div>
 
-      <div className={styles.description}>
+      <div className={styles.right_col}>
         <p>{description}</p>
       </div>
     </article>
