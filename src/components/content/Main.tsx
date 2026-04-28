@@ -1,9 +1,11 @@
-import Contact from './contact/Contact';
+import Experience from '@/components/content/experience/Experience';
+import Formation from '@/components/content/formation/Formation';
+import Welcome from '@/components/content/welcome/Welcome';
+import Projects from '@/components/content/projects/Projects';
+import Techs from '@/components/content/techs/Techs';
+import Contact from '@/components/content/contact/Contact';
+
 import styles from './Content.module.scss';
-import ExperienceAndEducation from './experience/ExperienceAndEducation';
-import Projects from "./projects/Projects";
-import Techs from './techs/Techs';
-import Welcome from "./welcome/Welcome";
 
 const Content = () => {
 
@@ -12,7 +14,8 @@ const Content = () => {
       <Welcome />
       <Projects />
       <Techs />
-      <ExperienceAndEducation />
+      <Experience />
+      <Formation />
       <Contact />
     </main>
   );

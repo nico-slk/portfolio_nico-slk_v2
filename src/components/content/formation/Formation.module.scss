@@ -1,0 +1,29 @@
+@use "@/styles/_variables.scss" as *;
+@use "@/styles/_mixins.scss" as *;
+
+.right {
+  width: 100%;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+  // Eliminamos el background-color si quieres que el fondo sea uniforme
+}
+
+.title_center {
+  font-family: $secondary-font;
+  color: $secondary-font-color;
+  font-size: clamp(28px, 5vw, 40px);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  text-align: right; // Mantenemos el contraste de alineación
+
+  @include mobile() {
+    text-align: left;
+  }
+}
+
+.timeline {
+  position: relative;
+  border-left: 2px solid rgba($primary-font-color, 0.2);
+  // Ajustamos el margen para que no se pegue al borde del grid
+  margin-left: clamp(10px, 3vw, 30px);
+  padding: 1rem 0;
+}

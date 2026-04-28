@@ -16,6 +16,7 @@ const {
   buttons_container,
   webBtn,
   webBtnIcon,
+  modal_buttons
 } = styles;
 
 interface ModalProps {
@@ -33,14 +34,17 @@ const ModalContent = ({ isOpen, setIsOpen, link, repo }: ModalProps) => {
       <p>
         {t('modal_description')}
       </p>
-      {link && (
-        <Button btnFn={() => window.open(link, '_blank', 'noopener,noreferrer')} type="button" className={webBtn}>
-          <FaGlobe className={webBtnIcon} />
+
+      <div className={modal_buttons}>
+        {link && (
+          <Button btnFn={() => window.open(link, '_blank', 'noopener,noreferrer')} type="button" className={webBtn}>
+            <FaGlobe className={webBtnIcon} />
+          </Button>
+        )}
+        <Button btnFn={() => window.open(repo, '_blank', 'noopener,noreferrer')} type="secondary" className={webBtn}>
+          {t('repository_button')}
         </Button>
-      )}
-      <Button btnFn={() => window.open(repo, '_blank', 'noopener,noreferrer')} type="secondary" className={webBtn}>
-        {t('repository_button')}
-      </Button>
+      </div>
     </Modal>
   );
 };

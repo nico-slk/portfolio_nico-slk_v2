@@ -1,8 +1,8 @@
 @use "@/styles/_variables.scss" as *;
 
 %button-base {
-  width: 200px;
-  height: 44px;
+  width: clamp(140px, 90vw, 200px);
+  height: clamp(40px, 10vh, 44px);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10,7 +10,16 @@
   cursor: pointer;
   border-radius: 8px;
   font-family: "Russo One", sans-serif;
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
+  white-space: nowrap;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 425px) {
+  %button-base {
+    width: 100%;
+    max-width: 200px;
+  }
 }
 
 .button {

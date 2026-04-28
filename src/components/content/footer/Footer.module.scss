@@ -11,22 +11,30 @@
 
 .footer {
   grid-column: 2 / 12;
-  height: 70px;
+  height: clamp(50px, 10vh, 70px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: clamp(12px, 4vw, 24px);
+  padding: clamp(1rem, 3vw, 1.5rem) 0;
+
+  @include tablet() {
+    grid-column: 1 / 13;
+    padding: clamp(0.75rem, 3vw, 1.25rem);
+  }
 
   @include mobile() {
     flex-direction: column;
-    gap: 16px;
+    gap: clamp(10px, 3vw, 16px);
     text-align: center;
+    height: auto;
   }
 }
 
 .left {
   p {
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     margin: 0;
 
     strong {
@@ -38,16 +46,23 @@
 
 .right {
   display: flex;
-  gap: 24px;
+  gap: clamp(12px, 3vw, 24px);
 
   a {
     color: #000;
-    font-size: 22px;
+    font-size: clamp(16px, 3vw, 22px);
     transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       transform: translateY(-3px);
       color: rgba(0, 0, 0, 0.7);
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 18px;
     }
   }
 }
