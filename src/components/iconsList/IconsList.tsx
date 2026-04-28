@@ -6,8 +6,8 @@ import {
   SiRedux,
   SiSpring,
 } from "react-icons/si";
-import type { TechsTypes } from "../card/Card";
 import styles from "./IconsList.module.scss";
+import type { TechsTypes } from "@/interfaces/project";
 
 const { iconStyle, container } = styles;
 

@@ -15,11 +15,25 @@
 
     .company {
       color: $secondary-font-color;
-      transform: translateX(8px);
     }
+
+    .company,
+    .position,
+    .date {
+      transform: translateX(32px);
+    }
+
+
 
     &::before {
       height: 100%;
+    }
+
+
+    .right_col {
+      p {
+        transform: translateX(32px);
+      }
     }
   }
 
@@ -54,12 +68,17 @@
   flex-direction: column;
   gap: 0.5rem;
 
+  .company,
+  .position,
+  .date {
+    transition: all 0.3s ease;
+  }
+
   .company {
     color: $primary-font-color;
     font-family: $secondary-font;
     font-size: clamp(1.3rem, 2.5vw, 1.8rem);
     line-height: 1.1;
-    transition: all 0.3s ease;
   }
 
   .position {
@@ -87,5 +106,6 @@
     font-size: 1.05rem;
     text-wrap: pretty;
     max-width: 70ch;
+    transition: all 0.3s ease;
   }
 }

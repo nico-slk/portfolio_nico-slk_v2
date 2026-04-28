@@ -1,20 +1,32 @@
+@use "@/styles/_variables.scss" as *;
+@use "@/styles/_mixins.scss" as *;
+
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1rem, 4vw, 2rem);
+  width: 100%;
+  padding: clamp(2rem, 5vw, 4rem) 0;
 }
 
-.icons_list {
+.title_center {
+  font-family: $secondary-font;
+  color: $secondary-font-color;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 3rem;
+  text-align: left;
+  border-top: 1px solid rgba($primary-font-color, 0.05);
+  padding-top: 2rem;
+}
+
+.icons_wrapper {
+  // background-color: rgba($primary-font-color, 0.02);
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: 8px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+  // border: 1px solid rgba($primary-font-color, 0.05);
+  transition: border-color 0.3s ease;
 
-  @media screen and (max-width: 768px) {
-    gap: clamp(0.75rem, 3vw, 1.5rem);
-  }
-
-  @media screen and (max-width: 425px) {
-    gap: 0.75rem;
-  }
+  // &:hover {
+  //   border-color: rgba($secondary-font-color, 0.3);
+  // }
 }

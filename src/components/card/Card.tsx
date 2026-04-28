@@ -54,8 +54,11 @@ const Card = ({ name, description, repo, link, techs, id }: Projects) => {
 
   return (
     <div className={container} key={id}>
-      <p className={card_title}>{name}</p>
-      <div className={underline}></div>
+      <div className={styles.header_group}>
+        <p className={card_title}>{name}</p>
+        <div className={underline}></div>
+      </div>
+
       <p className={card_text}>{description}</p>
 
       <IconsList techList={techs} />

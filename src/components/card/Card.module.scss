@@ -4,87 +4,98 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border-radius: 16px;
-  border: 2px solid $secondary-font-color;
-  padding: clamp(0.75rem, 5vw, 1rem);
+  position: relative;
+  padding: 2rem;
+  background-color: rgba($primary-font-color, 0.03);
 
-  text-align: left;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 
-  max-width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  height: 100%;
+  border-bottom: 1px solid rgba($primary-font-color, 0.1);
 
-  @media screen and (max-width: 768px) {
-    padding: 0.75rem;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 0;
+    background-color: $secondary-font-color;
+    transition: height 0.3s ease;
   }
 
-  @media screen and (max-width: 425px) {
-    padding: 0.6rem;
+  &:hover {
+    background-color: rgba($secondary-font-color, 0.02);
+    // transform: translateY(5px);
+
+    &::before {
+      height: 100%;
+    }
+
+    .card_title {
+      color: $secondary-font-color;
+    }
+  }
+
+  @include mobile() {
+    padding: 1.5rem;
   }
 }
 
 .card_title {
   font-family: $secondary-font;
-  font-size: clamp(22px, 5vw, 32px);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  margin-bottom: 0.5rem;
-
-  @include tablet-small() {
-    font-size: clamp(20px, 4vw, 28px);
-  }
-
-  @include mobile() {
-    font-size: clamp(18px, 4vw, 24px);
-  }
-}
-
-.card_text {
-  margin-bottom: 1rem;
-  word-wrap: break-word;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+  color: $primary-font-color;
 }
 
 .underline {
-  width: 60px;
-  border-radius: 4px;
-  height: 3px;
-  background-color: $secondary-color;
-  margin-bottom: 1rem;
-  margin-top: 0.25rem;
+  width: 40px;
+  height: 2px;
+  background-color: $secondary-font-color;
+  margin-bottom: 1.5rem;
+}
+
+.card_text {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba($primary-font-color, 0.8);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .buttons_container {
   display: flex;
   justify-content: space-between;
-  gap: clamp(0.5rem, 3vw, 1rem);
-  flex-wrap: wrap;
-  margin-top: 1rem;
-
-  @include mobile() {
-    gap: 0.5rem;
-  }
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba($primary-font-color, 0.05);
 }
 
 .webBtn {
-  width: 80px;
-
-  a {
-    display: grid;
-    place-items: center;
-  }
+  width: auto;
+  min-width: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .webBtnIcon {
-  width: 18px;
-  height: 18px;
-  color: black;
+  font-size: 1.2rem;
+  color: $primary-font-color;
 }
 
 .modal_buttons {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  margin-top: 2rem;
 }

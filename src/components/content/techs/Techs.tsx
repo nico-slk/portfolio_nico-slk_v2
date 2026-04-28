@@ -4,10 +4,12 @@ import styles from "./Techs.module.scss";
 
 const Techs = () => {
   const { t } = useTranslation();
+
   return (
     <div className={styles.container}>
-      <h2 >{t("techs")}</h2>
-      <div className={styles.icons_list}>
+      <h2 className={styles.title_center}>{t("techs")}</h2>
+
+      <div className={styles.icons_wrapper}>
         <IconsList techList={['javascript', 'react', 'node', 'express', 'redux', 'java', 'springboot']} />
       </div>
     </div>

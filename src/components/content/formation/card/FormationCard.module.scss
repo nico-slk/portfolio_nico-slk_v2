@@ -15,7 +15,7 @@
     .dot {
       background-color: $secondary-font-color;
       box-shadow: 0 0 15px $secondary-font-color;
-      transform: scale(1.2);
+      transform: scale(1.5);
     }
 
     background-color: rgba($secondary-font-color, 0.02);
@@ -31,9 +31,9 @@
 
 .dot {
   position: absolute;
-  left: -7px; // Centrado sobre la línea del padre (.timeline)
+  left: -7px;
   top: 50%;
-  transform: translateY(-50%);
+  // transform: translateY(-50%);
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -82,11 +82,18 @@
   }
 }
 
-.webBtn {
-  margin-left: 2rem;
-  // Tus estilos de botón existentes...
 
-  @include mobile() {
-    margin-left: 0;
+.webBtn {
+  width: 80px;
+
+  a {
+    display: grid;
+    place-items: center;
   }
+}
+
+.webBtnIcon {
+  width: 18px;
+  height: 18px;
+  color: black;
 }

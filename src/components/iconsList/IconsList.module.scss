@@ -3,25 +3,22 @@
 .container {
   display: flex;
   flex-direction: row;
-  gap: clamp(1rem, 3vw, 2rem);
-  background: none;
+  gap: clamp(1.5rem, 5vw, 4rem);
   flex-wrap: wrap;
   justify-content: center;
-
-  @media screen and (max-width: 425px) {
-    gap: 1rem;
-  }
 }
 
 .iconStyle {
-  width: clamp(24px, 4vw, 32px);
-  height: clamp(24px, 4vw, 32px);
-  margin-bottom: 1rem;
-  fill: $primary-color;
-  transition: filter 0.5s ease;
-  flex-shrink: 0;
+  width: clamp(40px, 6vw, 60px);
+  height: clamp(40px, 6vw, 60px);
+
+  fill: rgba($primary-font-color, 0.6);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
 
   &:hover {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+    fill: $secondary-font-color;
+    transform: scale(1.2) translateY(-10px);
+    filter: drop-shadow(0 10px 15px rgba($secondary-font-color, 0.3));
   }
 }

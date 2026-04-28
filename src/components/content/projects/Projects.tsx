@@ -1,4 +1,3 @@
-import Title from '@/components/common/Title';
 import { useFirebase } from '@/hooks/useFirebase';
 import type { Projects as IProjects, TechsTypes } from '@/interfaces/project';
 import { useTranslation } from 'react-i18next';
@@ -15,7 +14,9 @@ const Projects = () => {
 
   return (
     <div className={styles.container}>
-      <Title text={t('projects')} />
+      {/* Usamos h2 con title_center para igualar a Experience y Formation */}
+      <h2 className={styles.title_center}>{t('projects')}</h2>
+
       <div className={styles.list}>
         {projects.map((project: IProjects) => (
           <Card
