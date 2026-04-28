@@ -1,0 +1,35 @@
+@use "@/styles/_variables.scss" as *;
+@use "@/styles/_mixins.scss" as *;
+
+.title_container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: clamp(24px, 5vw, 40px);
+  gap: clamp(8px, 2vw, 12px);
+}
+
+.underline {
+  width: 30px;
+  height: 5px;
+  background-color: $secondary-color;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: $secondary-font;
+  font-size: clamp(20px, 5vw, 28px);
+  letter-spacing: 2px;
+
+  @include mobile() {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  &_center {
+    @extend .title;
+    text-align: center;
+    width: 100%;
+  }
+}

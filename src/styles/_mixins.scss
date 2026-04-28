@@ -1,0 +1,58 @@
+@mixin flexItemsCenter() {
+  display: flex;
+  flex-direction: column;
+}
+
+// Responsive breakpoints (mobile-first approach)
+@mixin web-l {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin web {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}
+
+// Additional responsive utilities
+@mixin small-mobile {
+  @media screen and (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media screen and (orientation: landscape) and (max-height: 500px) {
+    @content;
+  }
+}
+
+// Responsive font sizing helper
+@mixin responsive-font($min, $max) {
+  font-size: clamp($min, 2vw, $max);
+}
+
+// Responsive spacing helper
+@mixin responsive-spacing($property, $min, $max) {
+  #{$property}: clamp($min, 5vw, $max);
+}

@@ -1,0 +1,22 @@
+@use "@/styles/_variables.scss" as *;
+@use "@/styles/_mixins.scss" as *;
+
+.right {
+  width: 100%; // Ocupa todo el espacio entre col 2 y 12
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.title_center {
+  font-family: $secondary-font;
+  color: $secondary-font-color;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.timeline {
+  position: relative;
+  // Esta línea se alineará con el punto de las cards
+  border-left: 2px solid rgba($secondary-font-color, 0.2);
+  padding: 1rem 0;
+}

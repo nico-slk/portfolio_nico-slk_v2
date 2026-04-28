@@ -1,0 +1,120 @@
+@use "@/styles/_variables.scss" as *;
+
+%button-base {
+  width: clamp(140px, 90vw, 200px);
+  height: clamp(40px, 10vh, 44px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: "Russo One", sans-serif;
+  font-size: clamp(14px, 3vw, 16px);
+  white-space: nowrap;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 425px) {
+  %button-base {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+.button {
+  @extend %button-base;
+  background-color: $secondary-font-color;
+  color: #0a0a18;
+  border: solid 1px $secondary-font-color;
+  transition: all 0.3s;
+
+  &:active {
+    background-color: transparent;
+    color: $secondary-font-color;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: transparent;
+      color: $secondary-font-color;
+    }
+  }
+}
+
+.link {
+  @extend %button-base;
+  background-color: transparent;
+  border: none;
+  color: $primary-font-color;
+  transition: all 0.3s;
+  border: solid 1px rgba(255, 255, 255, 0);
+
+  &:active {
+    border: solid 3px rgba(255, 255, 255, 0.1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 0 0 36px 5px rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+.negativeLink {
+  @extend %button-base;
+  border: none;
+  background-color: $secondary-font-color;
+  transition: all 0.3s;
+
+  &:active {
+    border: solid 1px black;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-font-color;
+    }
+  }
+}
+
+.secondary {
+  @extend %button-base;
+  background-color: transparent;
+  color: $secondary-font-color;
+  border: solid 1px $secondary-font-color;
+  font-family: $primary-font;
+  transition: all 0.3s ease;
+
+  &:active {
+    background-color: $secondary-font-color;
+    color: black;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $secondary-font-color;
+      color: black;
+    }
+  }
+}
+
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.uploadBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 4px;
+}

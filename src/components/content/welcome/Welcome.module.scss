@@ -1,0 +1,131 @@
+@use "@/styles/_mixins.scss" as *;
+@use "@/styles/_variables.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.welcome {
+  width: 50%;
+  height: auto;
+  display: flex;
+  font-weight: 300;
+
+  &_left {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-right: clamp(20px, 5vw, 40px);
+    letter-spacing: 0.5px;
+
+    &_texts {
+      margin-bottom: clamp(32px, 8vw, 48px);
+
+      p {
+        font-size: clamp(16px, 3vw, 18px);
+        line-height: 1.6;
+        max-width: 520px;
+        color: $primary-font-color;
+      }
+    }
+
+    h3 {
+      display: inline-flex;
+      font-size: clamp(24px, 5vw, 32px);
+      font-family: $secondary-font;
+      margin-bottom: clamp(12px, 3vw, 16px);
+      gap: 8px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 10vw, 64px);
+      font-family: $secondary-font;
+      margin-bottom: clamp(12px, 3vw, 18px);
+      line-height: 1.2;
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: start;
+    padding-left: clamp(12px, 3vw, 24px);
+    justify-content: center;
+  }
+
+  @include web() {
+    &_left {
+      font-size: 18px;
+      padding-right: 0px;
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      h1 {
+        font-size: 56px;
+        line-height: 3rem;
+      }
+    }
+  }
+
+  @include tablet() {
+    .resumeBtn {
+      width: 100%;
+    }
+
+    &_left {
+      width: 100%;
+
+      h1 {
+        font-size: clamp(36px, 7vw, 42px);
+      }
+    }
+
+    &_right {
+      display: none;
+    }
+  }
+
+  @include tablet-small() {
+    &_left {
+      font-size: 16px;
+      padding-right: 0;
+
+      h3 {
+        font-size: 18px;
+      }
+
+      h1 {
+        font-size: clamp(28px, 6vw, 36px);
+      }
+    }
+  }
+
+  @include mobile() {
+    width: 100%;
+
+    &_left {
+      &_texts {
+        margin-bottom: 24px;
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+.computer {
+  width: 100%;
+  object-fit: contain;
+  max-width: clamp(300px, 50vw, 530px);
+  height: auto;
+}

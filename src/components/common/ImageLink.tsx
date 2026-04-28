@@ -1,4 +1,3 @@
-
 /**
  * 
  * <div>
@@ -9,7 +8,17 @@
   </div>
  */
 
-const ImageLink = ({ logo, classname, alt, href }: { logo: string; classname: string; alt: string; href: string; }) => {
+const ImageLink = ({
+  logo,
+  classname,
+  alt,
+  href,
+}: {
+  logo: string;
+  classname: string;
+  alt: string;
+  href: string;
+}) => {
   return (
     <a href={href} target="_blank">
       <img src={logo} className={classname} alt={alt} />

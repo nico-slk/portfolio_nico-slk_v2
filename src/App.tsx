@@ -1,25 +1,20 @@
-import { useTranslation } from 'react-i18next';
-import './App.css';
-import Header from './components/header/Header';
+import BackgroundBlobs from './components/common/BackgroundBlobs';
+import Main from "./components/content/Main";
+import Footer from './components/content/footer/Footer';
+import Header from "./components/content/header/Header";
 
-function App() {
-  const { t } = useTranslation();
-
+const App = () => {
   return (
     <>
-      <Header />
-      <div className="card">
-        <p>
+      <div id="root-container">
 
-          {t('hello')}
-        </p>
-        <p>
-          {t('about')}
-
-        </p>
+        <BackgroundBlobs />
+        <Header />
+        <Main />
+        <Footer />
       </div>
     </>
   );
-}
+};
 
 export default App;

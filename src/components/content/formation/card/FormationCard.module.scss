@@ -1,0 +1,92 @@
+@use "@/styles/_variables.scss" as *;
+@use "@/styles/_mixins.scss" as *;
+
+.timeline_item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0 2rem clamp(1.5rem, 4vw, 3rem); // Espacio para el punto
+  border-bottom: 1px solid rgba($primary-font-color, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    .dot {
+      background-color: $secondary-font-color;
+      box-shadow: 0 0 15px $secondary-font-color;
+      transform: scale(1.2);
+    }
+
+    background-color: rgba($secondary-font-color, 0.02);
+  }
+
+  @include mobile() {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.dot {
+  position: absolute;
+  left: -7px; // Centrado sobre la línea del padre (.timeline)
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: $background-color;
+  border: 2px solid $secondary-font-color;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.content_wrapper {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3rem);
+  flex: 1;
+
+  @include mobile() {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+.year {
+  font-family: $secondary-font;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  color: $primary-font-color;
+  opacity: 0.3;
+  min-width: 80px;
+}
+
+.title_group {
+  .formation_title {
+    font-family: $secondary-font;
+    color: $primary-font-color;
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .formation_institution {
+    color: $secondary-font-color;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+
+.webBtn {
+  margin-left: 2rem;
+  // Tus estilos de botón existentes...
+
+  @include mobile() {
+    margin-left: 0;
+  }
+}

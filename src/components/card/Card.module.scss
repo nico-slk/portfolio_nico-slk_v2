@@ -1,0 +1,90 @@
+@use "@/styles/_mixins.scss" as *;
+@use "@/styles/_variables.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 16px;
+  border: 2px solid $secondary-font-color;
+  padding: clamp(0.75rem, 5vw, 1rem);
+
+  text-align: left;
+
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    padding: 0.75rem;
+  }
+
+  @media screen and (max-width: 425px) {
+    padding: 0.6rem;
+  }
+}
+
+.card_title {
+  font-family: $secondary-font;
+  font-size: clamp(22px, 5vw, 32px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  margin-bottom: 0.5rem;
+
+  @include tablet-small() {
+    font-size: clamp(20px, 4vw, 28px);
+  }
+
+  @include mobile() {
+    font-size: clamp(18px, 4vw, 24px);
+  }
+}
+
+.card_text {
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+.underline {
+  width: 60px;
+  border-radius: 4px;
+  height: 3px;
+  background-color: $secondary-color;
+  margin-bottom: 1rem;
+  margin-top: 0.25rem;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(0.5rem, 3vw, 1rem);
+  flex-wrap: wrap;
+  margin-top: 1rem;
+
+  @include mobile() {
+    gap: 0.5rem;
+  }
+}
+
+.webBtn {
+  width: 80px;
+
+  a {
+    display: grid;
+    place-items: center;
+  }
+}
+
+.webBtnIcon {
+  width: 18px;
+  height: 18px;
+  color: black;
+}
+
+.modal_buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
